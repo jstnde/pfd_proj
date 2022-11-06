@@ -7,17 +7,17 @@ class CreateProductTest(CreateProductPage):
         super().setUp()
 
         self.login()
-        self.click_link("Create Product")
+        self.click_link(CreateProductPage.a_create)
 
     # Test Case 2 : Create Product
     def test_create_product(self):
         file_path = "./data/logo.jpg"
 
-        self.choose_file("#filetoupload", file_path)
-        self.send_keys("#ProductTitle", "Bottom Baggy Jeans")
-        self.send_keys("#price", "59.99")
+        self.choose_file(CreateProductPage.input_field_file, file_path)
+        self.send_keys(CreateProductPage.input_field_title, CreateProductPage.input_value_title)
+        self.send_keys(CreateProductPage.input_field_price, CreateProductPage.input_value_price)
 
-        self.click("//input[@type='submit']")
+        self.click(CreateProductPage.submit_btn)
 
-        self.assert_title("View Products - WEB2022APR_P05_T2")
+        self.assert_text(CreateProductPage.expected_page_title, CreateProductPage.page_title)
 

@@ -2,15 +2,18 @@ from seleniumbase import BaseCase
 
 
 class ProductDetailPage(BaseCase):
-    input_field_username = "input#uname"
-    input_field_password = "input#upass"
-    input_value_username = "ProductManager"
-    input_value_password = "passProduct"
-    input_value_invalid_username = "ProductManager"
-    input_value_invalid_password = "passProduct"
-    submit_btn = "//input[@type='submit' and @value='Submit']"
+    submit_btn = "//input[@type='submit']"
 
+    a_update = "Update Details"
+    title_field = "#ProductTitle"
+    title_value = "Pretty outfit 2"
+    price_field = "#Price"
+    price_value = 420
+
+    js_footer_hide = "document.getElementsByClassName('container')[2].hidden = true"
     obsolete_btn = "//input[@value='Obsolete' and @class= 'btn btn-primary']"
+    effective_field = "#date"
+    expected_style = "background-color: red; color: white;"
 
     def open_page(self):
-        self.get("https://localhost:44323/Product/ProductDetail/1")
+        self.get("https://localhost:44323/Product/ProductDetail/3")

@@ -8,7 +8,16 @@ class CreateProductPage(BaseCase):
     input_value_password = "passProduct"
     input_value_invalid_username = "ProductManager"
     input_value_invalid_password = "passProduct"
-    submit_btn = "//input[@type='submit' and @value='Submit']"
+    submit_btn = "//input[@type='submit']"
+    a_create = "Create Product"
+
+    input_field_file = "#filetoupload"
+    input_field_title = "#ProductTitle"
+    input_value_title = "Bottom Baggy Jeans"
+    input_field_price = "#price"
+    input_value_price = "59.99"
+    expected_page_title = "View Products"
+    page_title = ".PageTitle"
 
     def open_page(self):
         self.open("https://localhost:44323")
