@@ -7,17 +7,44 @@ class CreateProductTest(CreateProductPage):
         super().setUp()
 
         self.login()
+
+        self.save_screenshot("products_page",
+                             CreateProductPage.custom_screenshot_dir)
+
         self.click_link(CreateProductPage.a_create)
 
-    # Test Case 2 : Create Product
-    def test_create_product(self):
-        file_path = "./data/logo.jpg"
+        self.save_screenshot("create_product_page",
+                             CreateProductPage.custom_screenshot_dir)
 
-        self.choose_file(CreateProductPage.input_field_file, file_path)
-        self.send_keys(CreateProductPage.input_field_title, CreateProductPage.input_value_title)
-        self.send_keys(CreateProductPage.input_field_price, CreateProductPage.input_value_price)
+    # Test Case 3 : Create Product
+    def test_create_product(self):
+        self.choose_file(CreateProductPage.input_field_file, CreateProductPage.product_file_path)
+
+        # TODO: print log here
+
+        self.type(CreateProductPage.input_field_title, CreateProductPage.input_value_title)
+
+        # TODO: print log here
+
+        self.type(CreateProductPage.input_field_price, CreateProductPage.input_value_price)
+
+        # TODO: print log here
+
+        self.scroll_to(CreateProductPage.input_field_price)
+        self.save_screenshot("filled_create_product_page",
+                             CreateProductPage.custom_screenshot_dir +
+                             "/test_create_product")
 
         self.click(CreateProductPage.submit_btn)
 
         self.assert_text(CreateProductPage.expected_page_title, CreateProductPage.page_title)
 
+        self.scroll_to_bottom()
+        self.save_screenshot("updated_products_page",
+                             CreateProductPage.custom_screenshot_dir +
+                             "/test_create_product")
+
+        # TODO: print log here
+
+        # TODO:
+        #  exception handling

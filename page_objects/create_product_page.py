@@ -1,16 +1,21 @@
 from seleniumbase import BaseCase
+from datetime import datetime
 
 
 class CreateProductPage(BaseCase):
+    datetime_format = "%d%m%Y"
+    custom_screenshot_dir = "custom_screenshots/" + \
+                            datetime.now().strftime(datetime_format) + \
+                            "/create_product_page"
+
     input_field_username = "input#uname"
     input_field_password = "input#upass"
     input_value_username = "ProductManager"
     input_value_password = "passProduct"
-    input_value_invalid_username = "ProductManager"
-    input_value_invalid_password = "passProduct"
     submit_btn = "//input[@type='submit']"
     a_create = "Create Product"
 
+    product_file_path = "./data/logo.jpg"
     input_field_file = "#filetoupload"
     input_field_title = "#ProductTitle"
     input_value_title = "Bottom Baggy Jeans"
