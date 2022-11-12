@@ -1,38 +1,7 @@
 # TODO:
+complete test cases\
 include try catch where necessary\
-generate report for test cases\
-
-# Test Cases:
-<ol>
-    <li>
-        Login
-        <ol>
-            <li>Successful Login</li>
-            <li>Unsuccessful Login</li>
-        </ol>
-    </li>
-    <li>
-        Create Product
-        <ol>
-            <li>Successful Creation</li>
-            <li>Invalid File Format</li>
-            <li>Invalid Price</li>
-        </ol>
-    </li>
-    <li>
-        Edit Product
-        <ol>
-            <li>Successful Edit</li>
-            <li>WIP</li>
-        </ol>
-    </li>
-    <li>
-        Product Details
-        <ol>
-            <li>Status Update (Obsolete Button)</li>
-        </ol>
-    </li>
-</ol>
+include ss for test cases
 
 # Pages:
 <ul>
