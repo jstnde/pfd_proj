@@ -8,6 +8,7 @@ class ProductDetailTest(ProductDetailPage):
 
         self.open_page()
 
+
     # Test Case 3 : Edit Product
     def test_edit_product(self):
         self.click_link(ProductDetailPage.a_update)
@@ -20,6 +21,8 @@ class ProductDetailTest(ProductDetailPage):
         self.open_page()
         self.assert_text(ProductDetailPage.title_value, ProductDetailPage.title_field)
         self.assert_text(ProductDetailPage.price_value, ProductDetailPage.price_field)
+
+
 
     # Test Case 4 : Obsolete Button
     def test_obsolete_button(self):

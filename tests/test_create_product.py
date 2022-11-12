@@ -20,15 +20,15 @@ class CreateProductTest(CreateProductPage):
     def test_create_product(self):
         self.choose_file(CreateProductPage.input_field_file, CreateProductPage.product_file_path)
 
-        # TODO: print log here
+        print("Uploading test Image Completed")
 
         self.type(CreateProductPage.input_field_title, CreateProductPage.input_value_title)
 
-        # TODO: print log here
+        print("Input test title value : 'Bottom Baggy Jeans'")
 
         self.type(CreateProductPage.input_field_price, CreateProductPage.input_value_price)
 
-        # TODO: print log here
+        print("Input test price value : '$59.99'")
 
         self.scroll_to(CreateProductPage.input_field_price)
         self.save_screenshot("filled_create_product_page",
@@ -37,6 +37,7 @@ class CreateProductTest(CreateProductPage):
 
         self.click(CreateProductPage.submit_btn)
 
+
         self.assert_text(CreateProductPage.expected_page_title, CreateProductPage.page_title)
 
         self.scroll_to_bottom()
@@ -44,20 +45,24 @@ class CreateProductTest(CreateProductPage):
                              CreateProductPage.custom_screenshot_dir +
                              "/test_create_product")
 
-        # TODO: print log here
+        print("Press submit button")
+        print("Product creation completed and shown in homepage")
 
         # TODO:
         #  exception handling
 
     # Test Case 4 : Image Upload Validation
     def test_image_validation(self):
+
+        print("Uploading Image Incomplete")
+
         self.type(CreateProductPage.input_field_title, CreateProductPage.input_value_title)
 
-        # TODO: print log here
+        print("Input test title : 'Bottom Baggy Jeans'")
 
         self.type(CreateProductPage.input_field_price, CreateProductPage.input_value_price)
 
-        # TODO: print log here
+        print("Input test right price : '59.99'")
 
         self.scroll_to(CreateProductPage.input_field_price)
         self.save_screenshot("empty_image_create_product_page",
@@ -65,6 +70,9 @@ class CreateProductTest(CreateProductPage):
                              "/test_image_validation")
 
         self.click(CreateProductPage.submit_btn)
+
+        print("Click Submit Button")
+        print("Error message for not uploading product image appears")
 
         # TODO:
         #  add assertion
@@ -74,11 +82,14 @@ class CreateProductTest(CreateProductPage):
     def test_title_validation(self):
         self.choose_file(CreateProductPage.input_field_file, CreateProductPage.product_file_path)
 
-        # TODO: print log here
+        print("Uploading Test Image Complete")
 
         self.type(CreateProductPage.input_field_price, CreateProductPage.input_value_price)
 
-        # TODO: print log here
+
+        print("Leaving Input Title empty")
+        print("Input Test Right Price : 59.99")
+
 
         self.scroll_to(CreateProductPage.input_field_price)
         self.save_screenshot("empty_title_create_product_page",
@@ -87,19 +98,27 @@ class CreateProductTest(CreateProductPage):
 
         self.click(CreateProductPage.submit_btn)
 
+        print("Click Submit Button")
+        print("Error message for empty product title appears")
+
         # TODO:
         #  add assertion
         #  exception handling
 
-    # Test Case 6 : Price Field Validation
+    # Test Case 6 : Price Field Range Validation
     def test_price_validation(self):
         self.choose_file(CreateProductPage.input_field_file, CreateProductPage.product_file_path)
 
-        # TODO: print log here
+        print("Uploading Test Image Complete")
 
         self.type(CreateProductPage.input_field_title, CreateProductPage.input_value_title)
 
-        # TODO: print log here
+        print("Input Test Title : 'Bottom Baggy Jeans'")
+
+        #this part is for the wrong pricing : 1000.00 to check if my price range works(i m sry if i did smth wrong )
+        self.type(CreateProductPage.input_field_price, CreateProductPage.input_wrong_price)
+
+        print("Input Test Wrong Price : 1000.00")
 
         self.scroll_to(CreateProductPage.input_field_price)
         self.save_screenshot("empty_price_create_product_page",
@@ -107,6 +126,9 @@ class CreateProductTest(CreateProductPage):
                              "/test_price_validation")
 
         self.click(CreateProductPage.submit_btn)
+
+        print("Click Submit Button")
+        print("Error message warning user about price range appears")
 
         # TODO:
         #  add assertion
