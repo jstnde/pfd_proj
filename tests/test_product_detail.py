@@ -8,7 +8,7 @@ class ProductDetailTest(ProductDetailPage):
 
         self.open_page()
 
-    # Test Case 3 : Edit Product
+    # Test Case 7 : Edit Product
     def test_edit_product(self):
         self.click_link(ProductDetailPage.a_update)
         self.clear(ProductDetailPage.title_field)
@@ -21,7 +21,15 @@ class ProductDetailTest(ProductDetailPage):
         self.assert_text(ProductDetailPage.title_value, ProductDetailPage.title_field)
         self.assert_text(ProductDetailPage.price_value, ProductDetailPage.price_field)
 
-    # Test Case 4 : Obsolete Button
+    # Test Case 8 : Uneditable ID Validation
+    def test_id_validation(self):
+        return
+
+    # Test Case 9 : Uneditable  Date Validation
+    def test_date_validation(self):
+        return
+
+    # Test Case 10 : Obsolete Button
     def test_obsolete_button(self):
         self.add_js_code(ProductDetailPage.js_footer_hide)
 

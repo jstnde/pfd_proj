@@ -1,9 +1,14 @@
 from seleniumbase import BaseCase
+from datetime import datetime
 
 
 class ProductDetailPage(BaseCase):
-    submit_btn = "//input[@type='submit']"
+    datetime_format = "%d%m%Y"
+    custom_screenshot_dir = "custom_screenshots/" + \
+                            datetime.now().strftime(datetime_format) + \
+                            "/product_detail_page"
 
+    submit_btn = "//input[@type='submit']"
     a_update = "Update Details"
     title_field = "#ProductTitle"
     title_value = "Pretty outfit 2"
@@ -16,4 +21,4 @@ class ProductDetailPage(BaseCase):
     expected_style = "background-color: red; color: white;"
 
     def open_page(self):
-        self.get("https://localhost:44323/Product/ProductDetail/3")
+        self.get("https://localhost:44323/Product")
