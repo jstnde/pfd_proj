@@ -37,6 +37,7 @@ class CreateProductTest(CreateProductPage):
 
         self.click(CreateProductPage.submit_btn)
 
+        print("Press submit button")
 
         self.assert_text(CreateProductPage.expected_page_title, CreateProductPage.page_title)
 
@@ -45,7 +46,6 @@ class CreateProductTest(CreateProductPage):
                              CreateProductPage.custom_screenshot_dir +
                              "/test_create_product")
 
-        print("Press submit button")
         print("Product creation completed and shown in homepage")
 
         # TODO:
@@ -72,10 +72,16 @@ class CreateProductTest(CreateProductPage):
         self.click(CreateProductPage.submit_btn)
 
         print("Click Submit Button")
+
+        self.save_screenshot("error_price_create_product_page",
+                             CreateProductPage.custom_screenshot_dir +
+                             "/test_price_validation")
+
         print("Error message for not uploading product image appears")
 
+        self.assert_title_contains("Create")
+
         # TODO:
-        #  add assertion
         #  exception handling
 
     # Test Case 5 : Title Field Validation
@@ -86,10 +92,8 @@ class CreateProductTest(CreateProductPage):
 
         self.type(CreateProductPage.input_field_price, CreateProductPage.input_value_price)
 
-
         print("Leaving Input Title empty")
         print("Input Test Right Price : 59.99")
-
 
         self.scroll_to(CreateProductPage.input_field_price)
         self.save_screenshot("empty_title_create_product_page",
@@ -99,10 +103,16 @@ class CreateProductTest(CreateProductPage):
         self.click(CreateProductPage.submit_btn)
 
         print("Click Submit Button")
+
+        self.save_screenshot("error_title_create_product_page",
+                             CreateProductPage.custom_screenshot_dir +
+                             "/test_title_validation")
+
         print("Error message for empty product title appears")
 
+        self.assert_title_contains("Create")
+
         # TODO:
-        #  add assertion
         #  exception handling
 
     # Test Case 6 : Price Field Range Validation
@@ -115,21 +125,26 @@ class CreateProductTest(CreateProductPage):
 
         print("Input Test Title : 'Bottom Baggy Jeans'")
 
-        #this part is for the wrong pricing : 1000.00 to check if my price range works(i m sry if i did smth wrong )
         self.type(CreateProductPage.input_field_price, CreateProductPage.input_wrong_price)
 
         print("Input Test Wrong Price : 1000.00")
 
         self.scroll_to(CreateProductPage.input_field_price)
-        self.save_screenshot("empty_price_create_product_page",
+        self.save_screenshot("invalid_price_create_product_page",
                              CreateProductPage.custom_screenshot_dir +
                              "/test_price_validation")
 
         self.click(CreateProductPage.submit_btn)
 
         print("Click Submit Button")
+
+        self.save_screenshot("error_price_create_product_page",
+                             CreateProductPage.custom_screenshot_dir +
+                             "/test_price_validation")
+
         print("Error message warning user about price range appears")
 
+        self.assert_title_contains("Create")
+
         # TODO:
-        #  add assertion
         #  exception handling
