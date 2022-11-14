@@ -8,7 +8,7 @@ class LoginTest(LoginPage):
 
         self.open_page()
 
-    # Test Case 1 : Unsuccessful Login
+    # Test Case 1 : Successful Login
     def test_login(self):
         self.type(LoginPage.input_field_username, LoginPage.input_value_username)
         self.type(LoginPage.input_field_password, LoginPage.input_value_password)
