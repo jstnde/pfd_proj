@@ -74,9 +74,9 @@ class CreateProductTest(CreateProductPage):
 
         print("Click Submit Button")
 
-        self.save_screenshot("error_price_create_product_page",
+        self.save_screenshot("error_image_create_product_page",
                              CreateProductPage.custom_screenshot_dir +
-                             "/test_price_validation")
+                             "/test_image_validation")
 
         self.assert_title_contains("Create")
 
