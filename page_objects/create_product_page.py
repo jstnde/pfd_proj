@@ -21,10 +21,10 @@ class CreateProductPage(BaseCase):
     input_value_title = "Bottom Baggy Jeans"
     input_field_price = "#price"
     input_value_price = "59.99"
-    #here i make changes
-    input_wrong_price = "1000.00"
     expected_page_title = "View Products"
     page_title = ".PageTitle"
+
+    input_value_invalid_price = "1000.00"
 
     def open_page(self):
         self.open("https://localhost:44323")
