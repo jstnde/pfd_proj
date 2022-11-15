@@ -1,5 +1,3 @@
-from seleniumbase.common import exceptions
-
 from page_objects.login_page import LoginPage
 
 
