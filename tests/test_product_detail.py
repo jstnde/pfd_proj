@@ -59,9 +59,8 @@ class ProductDetailTest(ProductDetailPage):
         print("4. Click Submit")
         self.open_page()
         self.click(ProductDetailPage.product_desc2)
-        self.save_screenshot("after_id_edited",
-                             ProductDetailPage.custom_screenshot_dir +
-                             "/test_id_validation")
+        self.save_screenshot("tests_test_create_product.py__CreateProductTest__test_image_validation_1_0.png",
+                             "assets")
         self.assert_text(ProductDetailPage.correct_id, ProductDetailPage.id_field)
         print("Product ID unable to change")
         print("Test successful")
