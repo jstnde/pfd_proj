@@ -1,8 +1,12 @@
-FROM nginx:1.10.1-alpine
+FROM ubuntu:latest
+
 RUN apt update
 RUN apt install python3 -y
-COPY PFD_PROJ/TerminalTestingCode /usr/share/ngnix/html
 
-#CMD [ "nginx", "-g", "daemon off;" ]
+WORKDIR /user/app/src
+
+COPY PFD_PROJ/TerminalTestingCode ./
+
+CMD [ "python3", "./TerminalTestingCode" ]
 
 
