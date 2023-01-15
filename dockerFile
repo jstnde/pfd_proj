@@ -1,12 +1,10 @@
 FROM ubuntu:latest
 
 RUN apt update
-RUN apt install python3 -y
+RUN apt install python -y
 
 WORKDIR /user/app/src
 
 COPY PFD_PROJ/TerminalTestingCode ./
-
-CMD [ "python3", "./TerminalTestingCode" ]
 
 

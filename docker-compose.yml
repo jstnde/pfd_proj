@@ -1,0 +1,4 @@
+services:
+  LinuxTesting:
+    build: ./
+    command: python ./TerminalTestingCode.py
