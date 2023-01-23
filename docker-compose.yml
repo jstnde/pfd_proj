@@ -1,4 +1,7 @@
 services:
-  LinuxTesting:
-    build: ./
+  linux_testing:
+    image: ubuntu:latest
+    build: 
+      context: ./
+    container_name: linux_platform_testing
     command: python ./TerminalTestingCode.py
