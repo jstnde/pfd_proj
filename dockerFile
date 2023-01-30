@@ -5,5 +5,5 @@ RUN apt install python -y
 
 WORKDIR /user/app/src
 
-COPY PFD_PROJ .
+COPY PFD_PROJ CD..
 ENTRYPOINT [ "python3", "TerminalTestingCode.py" ]
