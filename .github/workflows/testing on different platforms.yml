@@ -10,17 +10,14 @@ on:
     branches: [ "master" ]
 
 
-
 jobs:
   build:
-
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python-version: ["3.10"]
 
     runs-on: ${{matrix.os}}
-
 
     steps:
     - name: Check out repo
@@ -32,7 +29,6 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-        
 
     - name: Install dependencies
       run: |
@@ -52,6 +48,7 @@ jobs:
         seleniumbase install geckodriver
         python -m pytest -n=4 --firefox -v --md-report --html=report_firefox_linux.html --screenshot 
       continue-on-error: true
+      
     - name: pushing files to github
       run: |
         git config --global user.name NataliekohNP
@@ -59,4 +56,4 @@ jobs:
         git pull
         git add -A
         git commit -am "Automated report"
-        git push
+        git push -f
