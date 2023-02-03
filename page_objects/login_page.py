@@ -1,23 +1,20 @@
 from seleniumbase import BaseCase
 from datetime import datetime
-
-
-class LoginPage(BaseCase):
+class loginpage(BaseCase):
     datetime_format = "%d%m%Y"
-    custom_screenshot_dir = "custom_screenshots/" + \
-                            datetime.now().strftime(datetime_format) + \
-                            "/login_page"
+    custom_screenshot_dir = "customer_screenshots/"+\
+                            datetime.now().strftime(datetime_format) + "/register_page"
 
-    input_field_username = "input#uname"
-    input_field_password = "input#upass"
-    input_value_username = "ProductManager"
-    input_value_password = "passProduct"
-    submit_btn = "//input[@type='submit' and @value='Submit']"
+    input_field_username = "input#user-name"
+    input_field_password = "input#password"
+    login_btn = "input#login-button"
+    input_password = "secret_sauce"
 
-    input_value_invalid_username = "ProductManager123"
-    error_text = "User does not exist!"
-    error_span = "/html/body/div/main/form/span"
-    error_expected_style = "color: red;"
+    input_normaluser = "standard_user"
+    input_wronguser = "locked_out_user"
 
+    error_msg = "Epic sadface: Sorry, this user has been locked out."
+    error_span = "h3"
+    error_style = "color:red"
     def open_page(self):
-        self.open("https://localhost:44323")
+        self.open("https://www.saucedemo.com/")
