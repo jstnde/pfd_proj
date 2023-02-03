@@ -52,7 +52,7 @@ jobs:
       run: |
         git config --global user.name NataliekohNP
         git config --global user.email S10227870@connect.np.edu.sg
-        git pull
         git add -A
         git commit -am "Automated report"
-        git push -f
+        git pull
+        git push
