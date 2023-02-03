@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - name: Set OS name
-      run: echo "GITHUB_OS=$(echo ${{matrix.os}})" >> $GITHUB_ENV
+      run: echo ("GITHUB_OS=" + ${{matrix.os}}) >> $GITHUB_ENV
     
     - name: Check out repo
       uses: actions/checkout@v2
