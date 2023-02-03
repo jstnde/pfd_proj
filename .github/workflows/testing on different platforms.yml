@@ -43,13 +43,13 @@ jobs:
         
     - name: Test chrome with pytest
       run: |
-        python -m pytest -n=4 --chrome -v --md-report --html=${{env.GITHUB_OS}}/report_chrome.html --screenshot
+        python -m pytest -n=4 --chrome -v --md-report --html=${{env.GITHUB_OS}}_report_chrome.html --screenshot
       continue-on-error: true
       
     - name: Test firefox with pytest
       run: |
         seleniumbase install geckodriver
-        python -m pytest -n=4 --firefox -v --md-report --html=${{env.GITHUB_OS}}/report_firefox.html --screenshot 
+        python -m pytest -n=4 --firefox -v --md-report --html=${{env.GITHUB_OS}}_report_firefox.html --screenshot 
       continue-on-error: true
       
     - name: pushing files to github
