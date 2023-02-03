@@ -55,4 +55,4 @@ jobs:
         git add -A
         git commit -am "Automated report"
         git pull
-        git push -f
+        git push
