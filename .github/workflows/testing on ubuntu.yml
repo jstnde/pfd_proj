@@ -56,3 +56,4 @@ jobs:
         git commit -am "Automated report"
         git pull
         git push
+        
